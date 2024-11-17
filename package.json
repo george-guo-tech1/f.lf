@@ -1,0 +1,43 @@
+{
+  "name": "lf-server",
+  "version": "0.1.0",
+  "description": "小朋友齐打交服务器",
+  "author": "Project F Developers",
+  "main": "main.js",
+  "scripts": {
+     "start": "electron ." ,
+     "build": "electron-builder"},
+  "dependencies": {
+    "body-parser": "~1.12.0",
+    "express": "~4.12.0",
+    "optimist": "~0.6.1",
+    "ws": "~0.4.25",
+    "cors": "~2.5.0",
+    "peer": "~0.2.8"
+  },
+   "build": {
+    "appId": "com.yourcompany.yourapp",
+    "win": {
+      "target": "nsis",
+      "publish": [
+        {
+          "provider": "generic",
+          "url": "https://npm-registry-cz.mirror.ustc.edu.cn/mirrors/electron/"
+        }
+      ]
+    },"files": [
+      "config/*",
+       "public/**/*",
+       "!dist/**",
+        "main.js", 
+        "index.js", 
+        "lobby.js" ]
+  },
+  "devDependencies": { 
+    "electron": "^25.0.0" ,
+    "electron-builder": "^24.4.0"}
+  ,
+  "engines": {
+    "node": "^0.10.25"
+  }
+}
